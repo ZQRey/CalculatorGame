@@ -120,6 +120,8 @@ public class Controller {
                                                 alert.setTitle("Убийца!");
                                                 alert.setHeaderText("Ты убил человечка! You murder!!! You busted!!!");
                                                 alert.show();
+                                                angry.setVisible(false);
+                                                calc.setVisible(true);
                                                 answer_field.clear();
                                                 window.clear();
                                             }

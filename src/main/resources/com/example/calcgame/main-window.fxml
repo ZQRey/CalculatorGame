@@ -6,7 +6,8 @@
 <?import javafx.scene.text.*?>
 
 <?import javafx.scene.chart.BubbleChart?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calcgame.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calcgame.Controller"
+>
    <children>
       <Pane fx:id="angry" prefHeight="370.0" prefWidth="304.0" visible="false">
          <children>
