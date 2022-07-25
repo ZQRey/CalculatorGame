@@ -5,11 +5,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
-public class Controller {
+import java.security.Key;
+
+public class Controller{
     @FXML
     private TextField answer_field;
     @FXML
@@ -71,6 +75,65 @@ public class Controller {
     @FXML
     private Circle head;
 
+
+    @FXML
+    protected void onKeyPressed(KeyEvent event){
+            if (event.getCode() == KeyCode.NUMPAD0) {
+                setZero();
+            }
+            if (event.getCode() == KeyCode.NUMPAD1) {
+                setOne();
+            }
+            if (event.getCode() == KeyCode.NUMPAD2) {
+                setTwo();
+            }
+            if (event.getCode() == KeyCode.NUMPAD3) {
+                setThree();
+            }
+            if (event.getCode() == KeyCode.NUMPAD4) {
+                setFour();
+            }
+            if (event.getCode() == KeyCode.NUMPAD5) {
+                setFive();
+            }
+            if (event.getCode() == KeyCode.NUMPAD6) {
+                setSix();
+            }
+            if (event.getCode() == KeyCode.NUMPAD7) {
+                setSeven();
+            }
+            if (event.getCode() == KeyCode.NUMPAD8) {
+                setEight();
+            }
+            if (event.getCode() == KeyCode.NUMPAD9) {
+                setNine();
+            }
+            if (event.getCode() == KeyCode.DIVIDE) {
+                setDivide();
+            }
+            if (event.getCode() == KeyCode.MULTIPLY) {
+                setMultiply();
+            }
+            if (event.getCode() == KeyCode.ADD) {
+                setPlus();
+            }
+            if (event.getCode() == KeyCode.SUBTRACT) {
+                setMinus();
+            }
+            if (event.getCode() == KeyCode.DECIMAL) {
+                setDot();
+            }
+            if (event.getCode() == KeyCode.ENTER || event.getCode() == KeyCode.EQUALS) {
+                if (calc.isVisible()){
+                    getResult();
+                } else {
+                    onClickButtonAnswer();
+                }
+            }
+            if (event.getCode() == KeyCode.BACK_SPACE){
+                backSpace();
+            }
+    }
     @FXML
     protected void onClickButtonAnswer(){
         if (answer_field.getText().equals("Ответ")) {

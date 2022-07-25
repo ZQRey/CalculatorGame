@@ -5,11 +5,110 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.chart.BubbleChart?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calcgame.Controller"
->
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calcgame.Controller">
    <children>
-      <Pane fx:id="angry" prefHeight="370.0" prefWidth="304.0" visible="false">
+      <Pane fx:id="calc" focusTraversable="true" onKeyPressed="#onKeyPressed" prefHeight="344.0" prefWidth="304.0">
+         <children>
+            <TextField fx:id="window" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="67.0" prefWidth="240.0">
+            </TextField>
+            <Button fx:id="one" layoutX="13.0" layoutY="144.0" mnemonicParsing="false" onAction="#setOne" prefHeight="40.0" prefWidth="53.0" text="1">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+            </Button>
+            <Button fx:id="two" layoutX="76.0" layoutY="144.0" mnemonicParsing="false" onAction="#setTwo" prefHeight="40.0" prefWidth="53.0" text="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="three" layoutX="137.0" layoutY="144.0" mnemonicParsing="false" onAction="#setThree" prefHeight="40.0" prefWidth="53.0" text="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="plus" layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#setPlus" prefHeight="40.0" prefWidth="53.0" text="+">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="four" layoutX="13.0" layoutY="193.0" mnemonicParsing="false" onAction="#setFour" prefHeight="40.0" prefWidth="53.0" text="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="five" layoutX="76.0" layoutY="193.0" mnemonicParsing="false" onAction="#setFive" prefHeight="40.0" prefWidth="53.0" text="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="six" layoutX="137.0" layoutY="193.0" mnemonicParsing="false" onAction="#setSix" prefHeight="40.0" prefWidth="53.0" text="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="minus" layoutX="73.0" layoutY="94.0" mnemonicParsing="false" onAction="#setMinus" prefHeight="40.0" prefWidth="53.0" text="-">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="seven" layoutX="14.0" layoutY="241.0" mnemonicParsing="false" onAction="#setSeven" prefHeight="40.0" prefWidth="53.0" text="7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="eight" layoutX="77.0" layoutY="241.0" mnemonicParsing="false" onAction="#setEight" prefHeight="40.0" prefWidth="53.0" text="8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="nine" layoutX="138.0" layoutY="241.0" mnemonicParsing="false" onAction="#setNine" prefHeight="40.0" prefWidth="53.0" text="9">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="multiply" layoutX="137.0" layoutY="94.0" mnemonicParsing="false" onAction="#setMultiply" prefHeight="40.0" prefWidth="53.0" text="*">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="result" layoutX="200.0" layoutY="193.0" mnemonicParsing="false" onAction="#getResult" prefHeight="141.0" prefWidth="53.0" text="=">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="divide" layoutX="200.0" layoutY="94.0" mnemonicParsing="false" onAction="#setDivide" prefHeight="40.0" prefWidth="53.0" text="/">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="clearField" layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearField" prefHeight="24.0" prefWidth="41.0" text="C">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="zero" layoutX="14.0" layoutY="294.0" mnemonicParsing="false" onAction="#setZero" prefHeight="40.0" prefWidth="118.0" text="0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="dot" layoutX="138.0" layoutY="294.0" mnemonicParsing="false" onAction="#setDot" prefHeight="40.0" prefWidth="53.0" text=".">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="201.0" layoutY="144.0" mnemonicParsing="false" onAction="#setPlusOrMinus" prefHeight="40.0" prefWidth="52.0" text="-/+">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="backspace" layoutX="256.0" layoutY="56.0" mnemonicParsing="false" onAction="#backSpace" prefHeight="25.0" prefWidth="41.0" text="&lt;-">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="angry" onKeyPressed="#onKeyPressed" prefHeight="370.0" prefWidth="304.0" visible="false">
          <children>
             <Line endX="-100.0" endY="114.0" layoutX="127.0" layoutY="120.0" startX="-100.0" startY="-86.0" strokeWidth="2.0" />
             <Line endX="-15.0" layoutX="128.0" layoutY="35.0" startX="-100.0" strokeWidth="2.0" />
@@ -32,107 +131,6 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-         </children>
-      </Pane>
-      <Pane fx:id="calc" prefHeight="344.0" prefWidth="304.0">
-         <children>
-            <TextField fx:id="window" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="67.0" prefWidth="240.0">
-            </TextField>
-            <Button fx:id="one" layoutX="13.0" layoutY="144.0" mnemonicParsing="false" onAction="#setOne" prefHeight="40.0" prefWidth="53.0" text="1">
-            <font>
-               <Font name="System Bold" size="12.0" />
-            </font>
-            </Button>
-            <Button fx:id="two" layoutX="76.0" layoutY="144.0" mnemonicParsing="false" onAction="#setTwo" prefHeight="40.0" prefWidth="53.0" text="2" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="three" layoutX="137.0" layoutY="144.0" mnemonicParsing="false" onAction="#setThree" prefHeight="40.0" prefWidth="53.0" text="3" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="plus" layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#setPlus" prefHeight="40.0" prefWidth="53.0" text="+" >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="four" layoutX="13.0" layoutY="193.0" mnemonicParsing="false" onAction="#setFour" prefHeight="40.0" prefWidth="53.0" text="4" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="five" layoutX="76.0" layoutY="193.0" mnemonicParsing="false" onAction="#setFive" prefHeight="40.0" prefWidth="53.0" text="5" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="six" layoutX="137.0" layoutY="193.0" mnemonicParsing="false" onAction="#setSix" prefHeight="40.0" prefWidth="53.0" text="6" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="minus" layoutX="73.0" layoutY="94.0" mnemonicParsing="false" onAction="#setMinus" prefHeight="40.0" prefWidth="53.0" text="-" >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="seven" layoutX="14.0" layoutY="241.0" mnemonicParsing="false" onAction="#setSeven" prefHeight="40.0" prefWidth="53.0" text="7" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="eight" layoutX="77.0" layoutY="241.0" mnemonicParsing="false" onAction="#setEight" prefHeight="40.0" prefWidth="53.0" text="8" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="nine" layoutX="138.0" layoutY="241.0" mnemonicParsing="false" onAction="#setNine" prefHeight="40.0" prefWidth="53.0" text="9" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="multiply" layoutX="137.0" layoutY="94.0" mnemonicParsing="false" onAction="#setMultiply" prefHeight="40.0" prefWidth="53.0" text="*" >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="result" layoutX="200.0" layoutY="193.0" mnemonicParsing="false" onAction="#getResult" prefHeight="141.0" prefWidth="53.0" text="=" >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="divide" layoutX="200.0" layoutY="94.0" mnemonicParsing="false" onAction="#setDivide" prefHeight="40.0" prefWidth="53.0" text="/" >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="clearField" layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearField" prefHeight="24.0" prefWidth="41.0" text="C" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="zero" layoutX="14.0" layoutY="294.0" mnemonicParsing="false" onAction="#setZero" prefHeight="40.0" prefWidth="118.0" text="0" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="dot" layoutX="138.0" layoutY="294.0" mnemonicParsing="false" onAction="#setDot" prefHeight="40.0" prefWidth="53.0" text="." >
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="201.0" layoutY="144.0" mnemonicParsing="false" onAction="#setPlusOrMinus" prefHeight="40.0" prefWidth="52.0" text="-/+" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="backspace" layoutX="256.0" layoutY="56.0" mnemonicParsing="false" onAction="#backSpace" prefHeight="25.0" prefWidth="41.0" text="&lt;-" >
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
          </children>
       </Pane>
    </children>
