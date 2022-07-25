@@ -3,15 +3,12 @@ package com.example.calcgame;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-
-import java.security.Key;
 
 public class Controller{
     @FXML
@@ -136,7 +133,7 @@ public class Controller{
     }
     @FXML
     protected void onClickButtonAnswer(){
-        if (answer_field.getText().equals("Ответ")) {
+        if (answer_field.getText().toLowerCase().equals("ответ")) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Хм...");
             alert.setHeaderText("А ты умён! Прощаю!");
@@ -153,6 +150,13 @@ public class Controller{
                     alert.setTitle("Всё верно!");
                     alert.setHeaderText("Человечек жив!");
                     alert.show();
+                    right_leg.setVisible(false);
+                    left_leg.setVisible(false);
+                    left_hand.setVisible(false);
+                    right_hand.setVisible(false);
+                    torso.setVisible(false);
+                    head.setVisible(false);
+                    rope.setVisible(false);
                     angry.setVisible(false);
                     calc.setVisible(true);
                     window.clear();
@@ -183,6 +187,13 @@ public class Controller{
                                                 alert.setTitle("Убийца!");
                                                 alert.setHeaderText("Ты убил человечка! You murder!!! You busted!!!");
                                                 alert.show();
+                                                right_leg.setVisible(false);
+                                                left_leg.setVisible(false);
+                                                left_hand.setVisible(false);
+                                                right_hand.setVisible(false);
+                                                torso.setVisible(false);
+                                                head.setVisible(false);
+                                                rope.setVisible(false);
                                                 angry.setVisible(false);
                                                 calc.setVisible(true);
                                                 answer_field.clear();
